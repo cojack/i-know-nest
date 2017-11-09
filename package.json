@@ -9,12 +9,15 @@
     "start": "node node_modules/.bin/ts-node $NODE_DEBUG_OPTION src/index.ts",
     "watch": "nodemon"
   },
+  "engines": {
+    "node": ">= 8.9"
+  },
   "dependencies": {
-    "@nestjs/common": "^4.1.7",
-    "@nestjs/core": "^4.1.7",
-    "@nestjs/microservices": "^4.1.7",
-    "@nestjs/testing": "^4.1.7",
-    "@nestjs/websockets": "^4.1.7",
+    "@nestjs/common": "^4",
+    "@nestjs/core": "^4",
+    "@nestjs/microservices": "^4",
+    "@nestjs/testing": "^4",
+    "@nestjs/websockets": "^4",
     "dotenv-safe": "^4.0.4",
     "lodash.defaultsdeep": "^4.6.0",
     "mongodb": "^2.2.33",

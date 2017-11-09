@@ -1,16 +1,13 @@
-import {Controller, Get} from '@nestjs/common';
+import {Controller} from '@nestjs/common';
 import {UserService} from './user.service';
+import {RestController} from '../../base/rest.controller';
 import {UserEntity} from './entity/user.entity';
 
 
 @Controller('/users')
-export class UsersController {
+export class UsersController extends RestController<UserEntity> {
 
-	constructor(private userService: UserService) {
-	}
-
-	@Get('/')
-	async findAll(): Promise<UserEntity[]> {
-		return this.userService.findAll();
+	constructor(protected service: UserService) {
+		super();
 	}
 }

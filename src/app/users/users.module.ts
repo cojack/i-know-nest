@@ -8,7 +8,7 @@ import {UserService} from './user.service';
 	modules: [DatabaseModule],
 	controllers: [UsersController],
 	components: [
-		usersProviders,
+		...usersProviders,
 		UserService
 	]
 })
