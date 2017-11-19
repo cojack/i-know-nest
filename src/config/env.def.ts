@@ -1,8 +1,8 @@
-import {ConnectionOptions} from 'typeorm'
+import {ConnectionOptions} from 'typeorm';
 
 export interface Config {
 	http?: any;
-	database?: ConnectionOptions
+	database?: ConnectionOptions;
 }
 
 export const def: Config = {

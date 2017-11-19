@@ -1,0 +1,24 @@
+# EditorConfig is awesome: http://EditorConfig.org
+
+# top-most EditorConfig file
+root = true
+
+# Unix-style newlines with a newline ending every file
+[*]
+charset = utf-8
+end_of_line = lf
+insert_final_newline = true
+
+# Indentation override for all TS under src directory
+[src/**.ts]
+indent_style = tab
+indent_size = 2
+
+# Tab indentation (no size specified)
+[README.md]
+indent_style = tab
+
+# Matches the exact files either package.json or .travis.yml
+[{package.json,.*.yml}]
+indent_style = space
+indent_size = 2

@@ -1,16 +1,19 @@
 import {NestFactory} from '@nestjs/core';
+import {Logger, INestApplication} from '@nestjs/common';
 import {AppModule} from './app.module';
-import {INestApplication} from '@nestjs/common/interfaces/nest-application.interface';
 import config from '../config';
-import {Logger} from '@nestjs/common';
 
 const logger = new Logger('AppDispatcher');
 
 export class AppDispatcher {
 	private app: INestApplication;
 
-	async dispatch() {
+	public async dispatch() {
 		return this.startServer();
+	}
+
+	public shutdown(): void {
+		this.app.close();
 	}
 
 	private async startServer() {
@@ -18,9 +21,5 @@ export class AppDispatcher {
 		return this.app.listen(config.http.port, config.http.host).then(() => {
 			logger.log(`Server listening on ${config.http.host}:${config.http.port}`);
 		});
-	}
-
-	shutdown() {
-		this.app.close();
 	}
 }

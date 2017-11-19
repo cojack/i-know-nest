@@ -1,12 +1,13 @@
 import * as dotenv from 'dotenv-safe';
-import {Logger} from '@nestjs/common';
-import {AppDispatcher} from './app/app.dispatcher';
-
-const logger = new Logger('Index');
 
 dotenv.config({
 	allowEmptyValues: false
 });
+
+import {Logger} from '@nestjs/common';
+import {AppDispatcher} from './app/app.dispatcher';
+
+const logger = new Logger('Index');
 
 const dispatcher = new AppDispatcher();
 dispatcher.dispatch().then(() => {
