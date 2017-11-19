@@ -10,6 +10,7 @@ import {UserService} from './user.service';
 	components: [
 		...usersProviders,
 		UserService
-	]
+	],
+	exports: [UserService]
 })
 export class UsersModule {}
